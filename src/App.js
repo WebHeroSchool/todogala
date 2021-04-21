@@ -5,6 +5,7 @@ import { Component } from 'react';
 
 const flag = true;
 const count = 23;
+import {count, lenght} from './number.js';
 
 class App extends Component {
   render() {
@@ -15,6 +16,11 @@ class App extends Component {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+
+        <div>
+            Общая длинна: {count*lenght}
+          </div>
+
         <p style={{
           color: 'red'
         }}>
