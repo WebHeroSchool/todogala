@@ -7,7 +7,7 @@ const todoItem = 'Написать новое приложение';
 
 const App = () => (
     <div>
-        <h1>Важные дела:</h1>
+        <h1>Важные дела, которые необходимо выполнить:</h1>
         <InputItem />
         <ItemList todoItem={todoItem} />
         <Footer count={6} />
