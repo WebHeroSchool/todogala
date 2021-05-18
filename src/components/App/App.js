@@ -22,7 +22,7 @@ const App = () =>
     <div>
         <h1>Важные дела, которые необходимо выполнить:</h1>
         <InputItem />
-        <ItemList todoItem={todoItem} />
+        <ItemList items={items} />
         <Footer count={6} />
     </div>); 
 }
