@@ -3,10 +3,8 @@ import InputItem from '../InputItem/InputItem'
 import ItemList from '../ItemList/ItemList';
 import Footer from '../Footer/Footer';
 
-const todoItem = 'Написать новое приложение';
-
-const App = () => 
-    const Items = [
+const App = () => {
+    const items = [
         {
             value: 'Написать новое приложение' //0
         },
