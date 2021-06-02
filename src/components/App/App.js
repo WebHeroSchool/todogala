@@ -19,7 +19,7 @@ class App extends React.Component {
                 isDone: false
             },
             {
-                value: 'Сделать необходимые дела',
+                value: 'Сделать важные дела',
                 isDone: true
             }
         ];
