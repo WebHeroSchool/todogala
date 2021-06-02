@@ -11,7 +11,7 @@ class App extends React.Component {
     state = {
         items = [
             {
-                value: 'Написать новое приложение',
+                value: 'Написать приложение',
                 isDone: true
             },
             {
@@ -19,7 +19,7 @@ class App extends React.Component {
                 isDone: false
             },
             {
-                value: 'Сделать все дела',
+                value: 'Сделать необходимые дела',
                 isDone: true
             }
         ];
