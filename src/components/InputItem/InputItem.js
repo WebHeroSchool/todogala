@@ -1,11 +1,16 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
+import styles from './InputItem.module.css'
 
-const InputItem = () => (<div>
-    <TextField
-        id="standard-dense"
-        label="Добавить задание"
-        margin="dense"
+const InputItem = () => (
+    <div className={styles.wrap}>
+            <TextField
+                id="standard-with-placeholder"
+                label="Добавить задание"
+                placeholder="Введите планируемое дело здесь"
+                margin="dense"
+                fullWidth
+                variant="outlined"
     />
     </div>);
 
