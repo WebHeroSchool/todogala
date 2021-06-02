@@ -8,8 +8,8 @@ const taskCount = 5;
 document.body.style.margin = 0;
 
 class App extends React.Component {
-    render() {
-        const items = [
+    state = {
+        items = [
             {
                 value: 'Написать новое приложение',
                 isDone: true
@@ -23,17 +23,18 @@ class App extends React.Component {
                 isDone: true
             }
         ];
-        
-    return (
-        <div className={styles.wrap}>
-         <div className={styles.main}>
-            <h1 className={styles.title}>Список дел:</h1>
-            <InputItem />
-            <ItemList items={items} />
-            <Footer taskCount={taskCount} />
-        </div>
-    </div>);
+    };
+
+    render() {
+        return (
+            <div className={styles.wrap}>
+            <div className={styles.main}>
+                <h1 className={styles.title}>Список дел:</h1>
+                <InputItem />
+                <ItemList items={this.state.stateitems} />
+             <Footer taskCount={taskCount} />
+            </div>
+            </div>);
     }
-}
 
 export default App;
