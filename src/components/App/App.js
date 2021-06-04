@@ -23,14 +23,14 @@ class App extends React.Component {
                 isDone: true
             }
         ],
-    
+    }
     render() {
         return (
             <div className={styles.wrap}>
             <div className={styles.main}>
                 <h1 className={styles.title}>Список дел:</h1>
                 <InputItem />
-                <ItemList items={this.state.stateitems} />
+                <ItemList items={this.state.items} />
              <Footer taskCount={taskCount} />
             </div>
             </div>);
