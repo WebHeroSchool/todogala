@@ -9,4 +9,4 @@ const ItemList = ({ items, onClickDone }) => (<List>
     </li>)}  
 </List>);
    
-export default Item;
+export default ItemList;
