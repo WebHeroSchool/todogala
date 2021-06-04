@@ -9,7 +9,7 @@ document.body.style.margin = 0;
 
 class App extends React.Component {
     state = {
-        items = [
+        items: [
             {
                 value: 'Написать приложение',
                 isDone: true
@@ -22,9 +22,8 @@ class App extends React.Component {
                 value: 'Сделать очень важные дела',
                 isDone: true
             }
-        ];
-    };
-
+        ],
+    
     render() {
         return (
             <div className={styles.wrap}>
@@ -36,5 +35,6 @@ class App extends React.Component {
             </div>
             </div>);
     }
+};
 
-export default App;
+    export default App;
