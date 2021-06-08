@@ -1,7 +1,12 @@
 .item {
-    color: red;
+
+	color: red;
 }
 
 .done {
     color: #c4c4c4;
+}
+
+.delete {
+	
 }

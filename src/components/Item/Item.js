@@ -1,33 +1,30 @@
-import React from 'react';
+import React from "react";
+import styles from "./Item.module.css"
+import classnames from "classnames"
 import ListItem from '@material-ui/core/ListItem';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListItemText from '@material-ui/core/ListItemText';
 import Checkbox from '@material-ui/core/Checkbox';
 import IconButton from '@material-ui/core/IconButton';
-import DeleteIcon from '@material-ui/icons/Delete';
-import { withStyles } from '@material-ui/core/styles';
+import DeleteForeverRoundedIcon from '@material-ui/icons/DeleteForeverRounded';
 
-const styles = {
-    done: {
-        textDecoration: 'Line-through'
-    }
-};
-
-const Item = ({value, isDone, classes, onClickDone}) => (
-    <ListItem fullWidth>
+const Item = ({value, isDone, onClickDone}) => (
+    <ListItem className={
+        classnames({
+            [styles.item]: true,
+            [styles.done]: isDone
+        })
+    } >
         <Checkbox
-            checked={isDone}
-            tabIndex={-1}
             onClick={() => onClickDone(isDone)}
         />
-                    <ListItemText primary={value} classes= {{
-                        root: isDone && classes.done
-                    }} />
-                    <ListItemSecondaryAction>  
-                        <IconButton aria-label="Comments" >
-                            <DeleteIcon />
-                        </IconButton>
-                    </ListItemSecondaryAction>
-                </ListItem>);
+        <ListItemText > {value}</ListItemText>
+        <ListItemSecondaryAction className={styles.delete}>
+            <IconButton aria-label="Comments">
+                <DeleteForeverRoundedIcon />
+            </IconButton>
+        </ListItemSecondaryAction>
+    </ListItem>
+);
 
-export default withStyles(styles)(Item);
+export default Item; 

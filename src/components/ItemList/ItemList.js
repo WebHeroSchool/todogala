@@ -1,12 +1,13 @@
-import React from 'react';
+import React from "react";
+import Item from "../Item/Item"
 import List from '@material-ui/core/List';
 
-import Item from '../Item/Item';
+const ItemList = ({value, items, onClickDone}) => (
+	<List>
+		{items.map(item => (
+			<Item key={item.value} value={item.value} isDone={item.isDone} onClickDone={onClickDone} />
+		))}
+	</List>
+);
 
-const ItemList = ({ items, onClickDone }) => (<List>
-    {items.map(item => <li key={item.value}>
-        <Item value={item.value} isDone={item.isDone} onClickDone={onClickDone} />
-    </li>)}  
-</List>);
-   
-export default ItemList;
+export default ItemList; 
