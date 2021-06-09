@@ -1,5 +1,5 @@
 import React from "react";
-import Item from "../Item/Item"
+import Item from "../Item/Item";
 import List from '@material-ui/core/List';
 
 const ItemList = ({value, items, onClickDone}) => (

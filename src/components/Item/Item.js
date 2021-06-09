@@ -8,6 +8,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteForeverRoundedIcon from '@material-ui/icons/DeleteForeverRounded';
 
+
 const Item = ({value, isDone, onClickDone}) => (
     <ListItem className={
         classnames({
