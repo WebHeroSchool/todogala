@@ -2,38 +2,63 @@ import React from 'react';
 import InputItem from '../InputItem/InputItem'
 import ItemList from '../ItemList/ItemList';
 import Footer from '../Footer/Footer';
-import styles from './App.module.css'; 
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
 
-const taskCount = 5;
-document.body.style.margin = 0;
+import styles from './App.module.css';
 
 class App extends React.Component {
-    render() {
-        const items = [
+    state = {
+        items: [
             {
                 value: 'Написать новое приложение',
-                isDone: true
+                isDone: true,
+                id: 1
             },
             {
                 value: 'Прописать props',
-                isDone: false
+                isDone: false,
+                id: 2
             },
             {
                 value: 'Сделать все дела',
-                isDone: true
+                isDone: true,
+                id: 3
             }
-        ];
-        
-    return (
-        <div className={styles.wrap}>
-         <div className={styles.main}>
-            <h1 className={styles.title}>Список дел:</h1>
-            <InputItem />
-            <ItemList items={items} />
-            <Footer taskCount={taskCount} />
-        </div>
-    </div>);
+        ],
+        count: 6
+    };
+
+    onClickDone = id => {
+        const newItemList = this.state.items.map(item => {
+            const newItem = { ...item };
+
+            if (item.id === id) {
+                newItem.isDone = !item.isDone;
+            }
+
+            return newItem;
+        });   
+
+        this.setState({ items: newItemList });
+    };
+
+    render() {
+        return (
+            <div className={styles.wrap}>
+                <Card>
+                    <CardContent>
+                 <div className={styles.main}>
+                    <h1 className={styles.title}>Список дел:</h1>
+                    <InputItem />
+                    <ItemList items={this.state.items} onClickDone={this.onClickDone} />
+                    <Footer count={this.state.count} />
+                </div>
+                    </CardContent>
+                </Card>
+                
+            </div>);
     }
-}
+};
 
 export default App;

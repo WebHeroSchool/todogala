@@ -1,8 +1,11 @@
+import { Typography } from '@material-ui/core';
 import React from 'react';
 import styles from './Footer.module.css'
 
-const Footer = ({ taskCount }) => (
-        <div className={styles.tasks}> Осталось выполнить: {taskCount} дел</div>
+const Footer = ({ count, onClickFooter }) => (
+        <Typography variant = 'subtitle1' color='textSecondary' onClick={onClickFooter}>
+                Осталось выполнить: {count} дел
+        </Typography>
 );
 
 export default Footer;
