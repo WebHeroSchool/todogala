@@ -1,31 +1,34 @@
 import React from "react";
-import styles from "./Item.module.css"
-import classnames from "classnames"
 import ListItem from '@material-ui/core/ListItem';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListItemText from '@material-ui/core/ListItemText';
 import Checkbox from '@material-ui/core/Checkbox';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteForeverRoundedIcon from '@material-ui/icons/DeleteForeverRounded';
+import { withStyles } from '@material-ui/core/styles'
 
+const styles = {
+    done: {
+        textDecoration: 'line-through'
+    }
+};
 
-const Item = ({value, isDone, onClickDone}) => (
-    <ListItem className={
-        classnames({
-            [styles.item]: true,
-            [styles.done]: isDone
-        })
-    } >
+const Item = ({value, isDone, classes, onClickDone, id}) => (
+    <ListItem fullWidth>
         <Checkbox
-            onClick={() => onClickDone(isDone)}
-        />
-        <ListItemText > {value}</ListItemText>
-        <ListItemSecondaryAction className={styles.delete}>
+            checked={isDone}
+            tabIndex={-1}
+            onClick={() => onClickDone(id)}
+        /> 
+            <ListItemText primary={value} classes={{
+                root: isDone && classes.done 
+            }} />
+        <ListItemSecondaryAction> 
             <IconButton aria-label="Comments">
-                <DeleteForeverRoundedIcon />
-            </IconButton>
+            <DeleteForeverRoundedIcon />  
+            </IconButton>            
         </ListItemSecondaryAction>
     </ListItem>
 );
 
-export default Item; 
+export default withStyles(styles)(Item); 
