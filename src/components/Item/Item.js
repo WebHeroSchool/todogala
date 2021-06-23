@@ -13,7 +13,7 @@ const styles = {
     }
 };
 
-const Item = ({value, isDone, classes, onClickDone, id}) => (
+const Item = ({value, isDone, classes, onClickDone, id, onClickDelete}) => (
     <ListItem fullWidth>
         <Checkbox
             checked={isDone}
@@ -25,7 +25,7 @@ const Item = ({value, isDone, classes, onClickDone, id}) => (
             }} />
         <ListItemSecondaryAction> 
             <IconButton aria-label="Comments">
-            <DeleteForeverRoundedIcon />  
+            <DeleteForeverRoundedIcon onClick={() => onClickDelete(id)} />  
             </IconButton>            
         </ListItemSecondaryAction>
     </ListItem>
