@@ -14,7 +14,7 @@ const styles = {
 };
 
 const Item = ({value, isDone, classes, onClickDone, id, onClickDelete}) => (
-    <ListItem fullWidth>
+    <ListItem fullwidth="true">
         <Checkbox
             checked={isDone}
             tabIndex={-1}
@@ -24,8 +24,8 @@ const Item = ({value, isDone, classes, onClickDone, id, onClickDelete}) => (
                 root: isDone && classes.done 
             }} />
         <ListItemSecondaryAction> 
-            <IconButton aria-label="Comments">
-            <DeleteForeverRoundedIcon onClick={() => onClickDelete(id)} />  
+            <IconButton aria-label="Comments" onClick={() => onClickDelete(id)}>
+            <DeleteForeverRoundedIcon  />  
             </IconButton>            
         </ListItemSecondaryAction>
     </ListItem>

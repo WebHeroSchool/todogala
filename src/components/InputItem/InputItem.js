@@ -9,7 +9,7 @@ const InputItem = () => (
                 label="Добавить задание"
                 placeholder="Введите планируемое дело здесь"
                 margin="dense"
-                fullWidth
+                fullwidth="true"
                 variant="outlined"
     />
     </div>);
