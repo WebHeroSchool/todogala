@@ -32,7 +32,6 @@ class InputItem extends React.Component {
             variant='contained'
             color='primary'
             fullwidth="true"
-            // onClick={() => onClickAdd(this.state.inputValue)}
             onClick={this.onButtonClick}
             >
                 Добавить
