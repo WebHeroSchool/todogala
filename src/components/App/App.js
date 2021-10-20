@@ -39,18 +39,7 @@ class App extends React.Component {
     count: state.count -1
     }));
     
-    // onClickAdd = value => this.setState(state => ({
-    //     items: [
-    //         ...state.items,
-    //         {
-    //             value,
-    //             isDone: false,
-    //             id: state.count + 1
-    //         }
-    //     ],
-    //     count: state.count + 1
-    // }));
- 	onClickAdd = value => {
+   	onClickAdd = value => {
 		if ( value !== '') {
 
 			this.setState(state => ({

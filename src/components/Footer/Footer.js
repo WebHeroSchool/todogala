@@ -8,4 +8,8 @@ const Footer = ({ count, onClickFooter }) => (
         </Typography>
 );
 
+Footer.defaultProps = {
+        count: 0
+}
+
 export default Footer;
