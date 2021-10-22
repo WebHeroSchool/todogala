@@ -31,4 +31,8 @@ const Item = ({value, isDone, classes, onClickDone, id, onClickDelete}) => (
     </ListItem>
 );
 
+Item.defaultProps = {
+    value: "Задача без имени"
+}
+
 export default withStyles(styles)(Item); 
