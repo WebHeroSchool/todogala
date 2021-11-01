@@ -32,7 +32,9 @@ const Item = ({value, isDone, classes, onClickDone, id, onClickDelete}) => (
 );
 
 Item.defaultProps = {
-    value: "Задача без имени"
-}
+    value: 'Задача не найдена',
+    isDone: false,
+    id: 0
+};
 
 export default withStyles(styles)(Item); 

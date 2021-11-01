@@ -15,14 +15,13 @@ const ItemList = ({value, items, onClickDone, onClickDelete}) => (<List>
 	</React.Fragment>)}
 </List>);
 
-ItemList.defaultProps = {
-	items: [
-		{
-		value: 'не найдено',
-		isDone: false,
-		id: 0
-	}
-]
-};
+// ItemList.defaultProps = {
+// 	items: [
+// 		{
+// 		value: 'не найдено',
+		
+// 	}
+// ]
+// };
 
 export default ItemList; 
