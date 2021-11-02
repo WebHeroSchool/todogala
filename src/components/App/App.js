@@ -26,34 +26,50 @@ class App extends React.Component {
                 id: 3
             }
         ],
-        count: 6
+        count: 3
     };
 
-    onClickDone = id => {
-        const newItemList = this.state.items.map(item => {
-            const newItem = { ...item };
+    onClickDone = id => this.setState(state => ({ items: state.items.map(item =>({
+        ...item,
+        isDone: item.id=== id ? !item.isDone : item.isDone
+    }))
+})); 
+ 
+    onClickDelete = id => this.setState(state => ({ items: state.items.filter(item => item.id !== id),
+    count: state.count -1
+    }));
+    
+   	onClickAdd = value => {
+		if ( value !== '') {
 
-            if (item.id === id) {
-                newItem.isDone = !item.isDone;
-            }
+			this.setState(state => ({
+				items: [
+					...state.items,
+					{
+						value,
+						isDone: false,
+						id: state.count + 1
+					}
+				],
+				count: state.count + 1,
+				hasError: false
+			}));
+	} else {
+		this.setState(state => ({
+			hasError: true
+        }))
 
-            return newItem;
-        });   
-
-        this.setState({ items: newItemList });
-    };
-
+    }   
+}   
     render() {
         return (
             <div className={styles.wrap}>
                 <Card>
                     <CardContent>
-                 <div className={styles.main}>
-                    <h1 className={styles.title}>Список дел:</h1>
-                    <InputItem />
-                    <ItemList items={this.state.items} onClickDone={this.onClickDone} />
-                    <Footer count={this.state.count} />
-                </div>
+                        <h1 className={styles.title}>Список дел:</h1>
+                        <InputItem onClickAdd={this.onClickAdd} />
+                        <ItemList items={this.state.items} onClickDone={this.onClickDone} onClickDelete={ this.onClickDelete }/>
+                        <Footer count={this.state.count}/>
                     </CardContent>
                 </Card>
                 

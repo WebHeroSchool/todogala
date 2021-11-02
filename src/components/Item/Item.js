@@ -13,8 +13,8 @@ const styles = {
     }
 };
 
-const Item = ({value, isDone, classes, onClickDone, id}) => (
-    <ListItem fullWidth>
+const Item = ({value, isDone, classes, onClickDone, id, onClickDelete}) => (
+    <ListItem fullwidth="true">
         <Checkbox
             checked={isDone}
             tabIndex={-1}
@@ -24,11 +24,17 @@ const Item = ({value, isDone, classes, onClickDone, id}) => (
                 root: isDone && classes.done 
             }} />
         <ListItemSecondaryAction> 
-            <IconButton aria-label="Comments">
-            <DeleteForeverRoundedIcon />  
+            <IconButton aria-label="Comments" onClick={() => onClickDelete(id)}>
+            <DeleteForeverRoundedIcon  />  
             </IconButton>            
         </ListItemSecondaryAction>
     </ListItem>
 );
+
+Item.defaultProps = {
+    value: 'Задача не найдена',
+    isDone: false,
+    id: 0
+};
 
 export default withStyles(styles)(Item); 
