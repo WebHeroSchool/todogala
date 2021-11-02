@@ -1,5 +1,6 @@
 import { Typography } from '@material-ui/core';
 import React from 'react';
+import ProTypes from 'prop-types'
 // import styles from './Footer.module.css'
 
 const Footer = ({ count, onClickFooter }) => (
@@ -8,8 +9,8 @@ const Footer = ({ count, onClickFooter }) => (
         </Typography>
 );
 
-Footer.defaultProps = {
-        count: 0
-}
+Footer.propTypes = {
+        count: ProTypes.number.isRequired
+};
 
 export default Footer;
