@@ -35,7 +35,10 @@ const Item = ({value, isDone, classes, onClickDone, id, onClickDelete}) => (
 Item.propTypes = {
     value: ProTypes.string.isRequired,
     isDone: ProTypes.bool.isRequired,
-    id: ProTypes.number.isRequired
+    id: ProTypes.number.isRequired,
+    onClickDone: ProTypes.func.isRequired,
+    onClickDelete: ProTypes.func.isRequired,
+    classes: ProTypes.func.isRequired
 };
 
 export default withStyles(styles)(Item); 
