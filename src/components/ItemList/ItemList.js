@@ -15,6 +15,11 @@ const ItemList = ({items, onClickDone, onClickDelete}) => (<List>
 	</React.Fragment>)}
 </List>);
 
+ItemList.propTypes = {
+    items: ProTypes.func.isRequired,
+    onClickDone: ProTypes.func.isRequired,
+    onClickDelete: ProTypes.func.isRequired
+};
 // ItemList.defaultProps = {
 // 	items: [
 // 		{
